@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<!--Generic armor base. Every armor will have these things. Only add/change stuff in this if you want every armor to be affected-->
+	<ThingDef Abstract="true" Name="GW_SM_ArmorBase" ParentName="ArmorMachineableBase">
+		<techLevel>Spacer</techLevel>
+		<recipeMaker>
+			<unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
+			<skillRequirements>
+				<Crafting>15</Crafting>
+			</skillRequirements>
+			<recipeUsers Inherit="false">
+				<li>GW_SM_ArmorBench</li>
+			</recipeUsers>
+		</recipeMaker>
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>1</drawSize>
+		</graphicData>
+		<thingCategories>
+			<li>ApparelArmor</li>
+		</thingCategories>
+		<uiIconScale>1.0</uiIconScale>
+		<tradeTags>
+			<li>HPArmor</li>
+		</tradeTags>
+		<equippedStatOffsets>
+			<ToxicEnvironmentResistance>0.50</ToxicEnvironmentResistance>
+		</equippedStatOffsets>
+		<apparel>
+			<drawData>
+				<dataNorth>
+					<layer>74</layer>
+				</dataNorth>
+				<dataWest>
+					<offset>(0.0, 0.0, -0.1)</offset>
+				</dataWest>
+				<dataEast>
+					<offset>(0.0, 0.0, -0.1)</offset>
+				</dataEast>
+				<!--<scale>1.5</scale> Uncomment these to increase size while equipped
+                <childScale>1.5</childScale>-->
+			</drawData>
+			<tags>
+				<li>Spacer</li>
+				<li>EVA</li>
+			</tags>
+			<useWornGraphicMask>true</useWornGraphicMask>
+			<countsAsClothingForNudity>true</countsAsClothingForNudity>
+			<bodyPartGroups>
+				<li>Torso</li>
+				<li>Neck</li>
+				<li>Shoulders</li>
+				<li>Arms</li>
+				<li>Legs</li>
+				<li MayRequire="ceteam.combatextended">Hands</li>
+				<li MayRequire="ceteam.combatextended">Feet</li>
+			</bodyPartGroups>
+			<layers>
+				<li>Middle</li>
+				<li>Shell</li>
+			</layers>
+			<defaultOutfitTags>
+				<li>Soldier</li>
+			</defaultOutfitTags>
+		</apparel>
+		<comps />
+		<modExtensions>
+			<li Class="VFECore.ApparelDrawPosExtension">
+				<isUnifiedApparel>true</isUnifiedApparel>
+				<hideHead>false</hideHead>
+			</li>
+			<li Class="CombatExtended.PartialArmorExt" MayRequire="ceteam.combatextended">
+				<stats>
+					<li>
+						<ArmorRating_Sharp>0.8</ArmorRating_Sharp>
+						<parts>
+							<li>Hand</li>
+						</parts>
+					</li>
+					<li>
+						<ArmorRating_Blunt>0.8</ArmorRating_Blunt>
+						<parts>
+							<li>Hand</li>
+						</parts>
+					</li>
+				</stats>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<!--Scout-->
+	<ThingDef ParentName="GW_SM_ArmorBase">
+		<defName>GW_SM_Scout</defName>
+		<label>scout armor</label>
+		<description>An enlarged, unpowered suit of carapace armor issued to Scout Marines. While it lacks the protection and other benefits of actual Power Armor, this suit of armor is less restrictive on movement and is quieter to move, making it more suitable for reconnaissance and unconventional warfare.\n\nScout Marines are typically the newest recruits of a Space Marine chapter. The Codex Astartes dictates that the 10th Company of a chapter should consist only of Scout Marines and Vanguard Space Marines.</description>
+		<graphicData>
+			<texPath>Things/Apparel/Armor_Scouts/Display/Scout_torso</texPath>
+		</graphicData>
+		<recipeMaker>
+			<researchPrerequisite>GW_SM_AstartesFabrication</researchPrerequisite>
+		</recipeMaker>
+		<statBases>
+			<WorkToMake>20000</WorkToMake>
+			<MaxHitPoints>700</MaxHitPoints>
+			<Mass>2</Mass>
+			<Flammability>0.2</Flammability>
+			<ArmorRating_Sharp>1</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.65</ArmorRating_Blunt>
+			<ArmorRating_Heat>0.7</ArmorRating_Heat>
+			<Insulation_Cold>10</Insulation_Cold>
+			<Insulation_Heat>10</Insulation_Heat>
+			<EquipDelay>2</EquipDelay>
+		</statBases>
+		<equippedStatOffsets>
+			<ToxicEnvironmentResistance>0.5</ToxicEnvironmentResistance>
+			<MoveSpeed>0.2</MoveSpeed>
+		</equippedStatOffsets>
+		<costList>
+			<ComponentSpacer>3</ComponentSpacer>
+			<Plasteel>300</Plasteel>
+			<Steel>300</Steel>
+			<Uranium>40</Uranium>
+			<HP_Ceramite>25</HP_Ceramite>
+		</costList>
+		<comps Inherit="False">
+			<li>
+				<compClass>CompQuality</compClass>
+			</li>
+			<li Class="CompProperties_Styleable" />
+			<li Class="CompProperties_Forbiddable" />
+			<li>
+				<compClass>CompColorable</compClass>
+			</li>
+		</comps>
+		<apparel>
+			<wornGraphicPath>Things/Apparel/Armor_Scouts/Scout_torso</wornGraphicPath>
+			<tags Inherit="False">
+				<!--<li>Spacer</li>-->
+				<li>GW_Scout</li>
+			</tags>
+		</apparel>
+	</ThingDef>
+
+	<!--MKX Reiver-->
+	<ThingDef ParentName="GW_SM_ArmorBase">
+		<defName>GW_SM_ReiverArmor</defName>
+		<label>reiver power armor</label>
+		<description>The MK X Reiver body armor is tailored for stealth and close-quarters combat. It's lightweight yet durable, allowing for agility while providing essential protection. Integrated with camo cloaks and grapnel launchers, Reiver armor enables silent movement and swift engagement, making it ideal for covert operations and infiltration missions.</description>
+		<graphicData>
+			<texPath>Things/Apparel/Armor_Reiver/Reiver_torso_south</texPath>
+		</graphicData>
+		<recipeMaker>
+			<researchPrerequisite>GW_SM_AstartesLight</researchPrerequisite>
+		</recipeMaker>
+		<statBases>
+			<WorkToMake>25000</WorkToMake>
+			<MaxHitPoints>800</MaxHitPoints>
+			<Mass>11</Mass>
+			<Flammability>0.2</Flammability>
+			<ArmorRating_Sharp>1.30</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.90</ArmorRating_Blunt>
+			<ArmorRating_Heat>1.0</ArmorRating_Heat>
+			<Insulation_Cold>20</Insulation_Cold>
+			<Insulation_Heat>20</Insulation_Heat>
+			<EquipDelay>2</EquipDelay>
+		</statBases>
+		<equippedStatOffsets>
+			<MoveSpeed>-0.2</MoveSpeed>
+			<MeleeDodgeChance>0.2</MeleeDodgeChance>
+			<MeleeHitChance>0.1</MeleeHitChance>
+		</equippedStatOffsets>
+		<costList>
+			<ComponentSpacer>10</ComponentSpacer>
+			<Plasteel>350</Plasteel>
+			<Steel>400</Steel>
+			<Uranium>50</Uranium>
+			<HP_Ceramite>50</HP_Ceramite>
+		</costList>
+		<apparel>
+			<wornGraphicPath>Things/Apparel/Armor_Reiver/Reiver_torso</wornGraphicPath>
+			<tags>
+				<li>GW_Reiver</li>
+			</tags>
+		</apparel>
+	</ThingDef>
+
+	<!--MKX Phobos-->
+	<ThingDef ParentName="GW_SM_ArmorBase">
+		<defName>GW_SM_PhobosArmor</defName>
+		<label>phobos power armor</label>
+		<description>A suit of Adeptus Astartes power armor of the Mk X Phobos pattern. It is a variant of the mainline Tacticus pattern, trading protection for lighter weight, higher mobility, and silent servomotors.\n\nArmor like this is worn by Primaris Space Marines - specifically Vanguard Infiltrators (tasked with sabotage and communications disruption) and Vanguard Eliminators (who neutralise high-value targets from long range).</description>
+		<graphicData>
+			<texPath>Things/Apparel/Armor_Phobos/Phobos_torso_south</texPath>
+		</graphicData>
+		<recipeMaker>
+			<researchPrerequisite>GW_SM_AstartesLight</researchPrerequisite>
+		</recipeMaker>
+		<statBases>
+			<WorkToMake>25000</WorkToMake>
+			<MaxHitPoints>800</MaxHitPoints>
+			<Mass>11</Mass>
+			<Flammability>0.2</Flammability>
+			<ArmorRating_Sharp>1.30</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.90</ArmorRating_Blunt>
+			<ArmorRating_Heat>1.0</ArmorRating_Heat>
+			<Insulation_Cold>20</Insulation_Cold>
+			<Insulation_Heat>20</Insulation_Heat>
+			<EquipDelay>2</EquipDelay>
+		</statBases>
+		<equippedStatOffsets>
+			<MoveSpeed>-0.2</MoveSpeed>
+			<ShootingAccuracyPawn>0.2</ShootingAccuracyPawn>
+		</equippedStatOffsets>
+		<costList>
+			<ComponentSpacer>10</ComponentSpacer>
+			<Plasteel>350</Plasteel>
+			<Steel>400</Steel>
+			<Uranium>50</Uranium>
+			<HP_Ceramite>50</HP_Ceramite>
+		</costList>
+		<apparel>
+			<wornGraphicPath>Things/Apparel/Armor_Phobos/Phobos_torso</wornGraphicPath>
+			<tags>
+				<li>GW_Phobos</li>
+			</tags>
+		</apparel>
+	</ThingDef>
+
+	<!--MKIV-->
+	<ThingDef ParentName="GW_SM_ArmorBase">
+		<defName>GW_SM_MaximusArmor</defName>
+		<label>maximus power armor</label>
+		<description>The Maximus MK IV armor is celebrated for its exceptional durability and adaptability in combat. Constructed from adamantium and plasteel alloys, it offers superior protection while remaining versatile on the battlefield. Its modular design allows for easy customization to suit diverse combat scenarios. Enhanced with advanced targeting systems, this armor ensures the wearer remains a formidable force, embodying the indomitable spirit of the Space Marines.</description>
+		<graphicData>
+			<texPath>Things/Apparel/Armor_Maximus/Maximus_torso_south</texPath>
+		</graphicData>
+		<recipeMaker>
+			<researchPrerequisite>GW_SM_AstartesMedium</researchPrerequisite>
+		</recipeMaker>
+		<statBases>
+			<WorkToMake>25000</WorkToMake>
+			<MaxHitPoints>1000</MaxHitPoints>
+			<Mass>11</Mass>
+			<Flammability>0.2</Flammability>
+			<ArmorRating_Sharp>1.50</ArmorRating_Sharp>
+			<ArmorRating_Blunt>1.30</ArmorRating_Blunt>
+			<ArmorRating_Heat>1.0</ArmorRating_Heat>
+			<Insulation_Cold>20</Insulation_Cold>
+			<Insulation_Heat>20</Insulation_Heat>
+			<EquipDelay>4</EquipDelay>
+		</statBases>
+		<equippedStatOffsets>
+			<MoveSpeed>-0.4</MoveSpeed>
+		</equippedStatOffsets>
+		<costList>
+			<ComponentSpacer>10</ComponentSpacer>
+			<Plasteel>400</Plasteel>
+			<Steel>500</Steel>
+			<Uranium>75</Uranium>
+			<HP_Ceramite>50</HP_Ceramite>
+		</costList>
+		<apparel>
+			<wornGraphicPath>Things/Apparel/Armor_Maximus/Maximus_torso</wornGraphicPath>
+			<tags>
+				<li>GW_Maximus</li>
+			</tags>
+		</apparel>
+	</ThingDef>
+
+	<!--MKVI-->
+	<ThingDef ParentName="GW_SM_ArmorBase">
+		<defName>GW_SM_CorvusArmor</defName>
+		<label>corvus power armor</label>
+		<description>The MK VI Corvus armor is renowned for its sleek design and agility, particularly suited for stealth missions. Crafted from lightweight yet durable materials, it offers robust protection without compromising mobility. Enhanced with advanced stealth technology, it enables silent movement through enemy territory, making it ideal for covert operations. Frequently paired with jump packs, this armor allows for swift and dynamic engagement on the battlefield.</description>
+		<graphicData>
+			<texPath>Things/Apparel/Armor_Corvus/Corvus_torso_south</texPath>
+		</graphicData>
+		<recipeMaker>
+			<researchPrerequisite>GW_SM_AstartesMedium</researchPrerequisite>
+		</recipeMaker>
+		<statBases>
+			<WorkToMake>25000</WorkToMake>
+			<MaxHitPoints>1000</MaxHitPoints>
+			<Mass>11</Mass>
+			<Flammability>0.2</Flammability>
+			<ArmorRating_Sharp>1.50</ArmorRating_Sharp>
+			<ArmorRating_Blunt>1.30</ArmorRating_Blunt>
+			<ArmorRating_Heat>1.0</ArmorRating_Heat>
+			<Insulation_Cold>20</Insulation_Cold>
+			<Insulation_Heat>20</Insulation_Heat>
+			<EquipDelay>4</EquipDelay>
+		</statBases>
+		<equippedStatOffsets>
+			<MoveSpeed>-0.4</MoveSpeed>
+		</equippedStatOffsets>
+		<costList>
+			<ComponentSpacer>10</ComponentSpacer>
+			<Plasteel>400</Plasteel>
+			<Steel>500</Steel>
+			<Uranium>75</Uranium>
+			<HP_Ceramite>50</HP_Ceramite>
+		</costList>
+		<apparel>
+			<wornGraphicPath>Things/Apparel/Armor_Corvus/Corvus_torso</wornGraphicPath>
+			<tags>
+				<li>GW_Corvus</li>
+			</tags>
+		</apparel>
+	</ThingDef>
+
+	<!--MKVII-->
+	<ThingDef ParentName="GW_SM_ArmorBase">
+		<defName>GW_SM_AquillaArmor</defName>
+		<label>aquilla power armor</label>
+		<description>The MK VII Aquila power armor, alongside Primaris variants, stands as one of the most popular choices among "firstborn" Space Marines. Renowned for its versatility and battlefield effectiveness, it offers a balance of protection and mobility. Crafted with the iconic aquila motif, symbolizing the Imperium's might, this armor is a symbol of honor and duty for the Adeptus Astartes. Trusted by generations of Space Marines, the MK VII Aquila armor remains a cornerstone of their arsenal, embodying the unwavering resolve of the Emperor's finest warriors.</description>
+		<graphicData>
+			<texPath>Things/Apparel/Armor_Aquilla/Aquilla_torso_south</texPath>
+		</graphicData>
+		<recipeMaker>
+			<researchPrerequisite>GW_SM_AstartesMedium</researchPrerequisite>
+		</recipeMaker>
+		<statBases>
+			<WorkToMake>25000</WorkToMake>
+			<MaxHitPoints>1000</MaxHitPoints>
+			<Mass>11</Mass>
+			<Flammability>0.2</Flammability>
+			<ArmorRating_Sharp>1.50</ArmorRating_Sharp>
+			<ArmorRating_Blunt>1.30</ArmorRating_Blunt>
+			<ArmorRating_Heat>1.0</ArmorRating_Heat>
+			<Insulation_Cold>20</Insulation_Cold>
+			<Insulation_Heat>20</Insulation_Heat>
+			<EquipDelay>4</EquipDelay>
+		</statBases>
+		<equippedStatOffsets>
+			<MoveSpeed>-0.4</MoveSpeed>
+		</equippedStatOffsets>
+		<costList>
+			<ComponentSpacer>10</ComponentSpacer>
+			<Plasteel>400</Plasteel>
+			<Steel>500</Steel>
+			<Uranium>75</Uranium>
+			<HP_Ceramite>50</HP_Ceramite>
+		</costList>
+		<apparel>
+			<wornGraphicPath>Things/Apparel/Armor_Aquilla/Aquilla_torso</wornGraphicPath>
+			<tags>
+				<li>GW_Aquilla</li>
+			</tags>
+		</apparel>
+	</ThingDef>
+
+	<!--MKX Tacticus-->
+	<ThingDef ParentName="GW_SM_ArmorBase">
+		<defName>GW_SM_TacticusArmor</defName>
+		<label>tacticus power armor</label>
+		<description>The MK X Tacticus power armor, created by Belisarius Cawl, stands as a testament to Adeptus Astartes innovation. Primarily utilized by the Primaris Space Marines, it represents the pinnacle of adaptability and versatility. Its modular construction allows for swift customization to suit various combat roles and environments. Engineered for optimal protection and mobility, the MK X Tacticus armor embodies the relentless pursuit of excellence by the Imperium's finest warriors.</description>
+		<graphicData>
+			<texPath>Things/Apparel/Armor_Tacticus/Tacticus_torso_south</texPath>
+		</graphicData>
+		<recipeMaker>
+			<researchPrerequisite>GW_SM_AstartesMedium</researchPrerequisite>
+		</recipeMaker>
+		<statBases>
+			<WorkToMake>25000</WorkToMake>
+			<MaxHitPoints>1000</MaxHitPoints>
+			<Mass>11</Mass>
+			<Flammability>0.2</Flammability>
+			<ArmorRating_Sharp>1.65</ArmorRating_Sharp>
+			<ArmorRating_Blunt>1.45</ArmorRating_Blunt>
+			<ArmorRating_Heat>1.0</ArmorRating_Heat>
+			<Insulation_Cold>30</Insulation_Cold>
+			<Insulation_Heat>30</Insulation_Heat>
+			<EquipDelay>4</EquipDelay>
+		</statBases>
+		<equippedStatOffsets>
+			<MoveSpeed>-0.4</MoveSpeed>
+		</equippedStatOffsets>
+		<costList>
+			<ComponentSpacer>10</ComponentSpacer>
+			<Plasteel>400</Plasteel>
+			<Steel>500</Steel>
+			<Uranium>75</Uranium>
+			<HP_Ceramite>50</HP_Ceramite>
+		</costList>
+		<apparel>
+			<wornGraphicPath>Things/Apparel/Armor_Tacticus/Tacticus_torso</wornGraphicPath>
+			<tags>
+				<li>GW_Tacticus</li>
+			</tags>
+		</apparel>
+	</ThingDef>
+
+	<!--Gravis-->
+	<ThingDef Name="GW_SM_GravisArmorBase" ParentName="GW_SM_ArmorBase">
+		<defName>GW_SM_GravisArmor</defName>
+		<label>gravis power armor (a)</label>
+		<description>The MK X Gravis power armor, favored by high-ranking Adeptus Astartes officers, as well as specialized units like Inceptors and Aggressors among the Primaris ranks, signifies unparalleled resilience and firepower on the battlefield. Designed by Belisarius Cawl, this armor combines the adaptability of the MK X Tacticus with enhanced durability and strength. Its reinforced plating offers superior protection against heavy weaponry, while its integrated systems provide enhanced firepower and tactical flexibility. Trusted by elite warriors, the MK X Gravis armor embodies the unwavering determination and leadership of the Imperium's finest champions.</description>
+		<graphicData>
+			<texPath>Things/Apparel/Armor_Gravis/Gravis_torso_south</texPath>
+		</graphicData>
+		<recipeMaker>
+			<researchPrerequisite>GW_SM_AstartesHeavy</researchPrerequisite>
+		</recipeMaker>
+		<statBases>
+			<WorkToMake>90000</WorkToMake>
+			<MaxHitPoints>1200</MaxHitPoints>
+			<Mass>13</Mass>
+			<Flammability>0.1</Flammability>
+			<ArmorRating_Sharp>1.85</ArmorRating_Sharp>
+			<ArmorRating_Blunt>1.55</ArmorRating_Blunt>
+			<ArmorRating_Heat>1.3</ArmorRating_Heat>
+			<Insulation_Cold>40</Insulation_Cold>
+			<Insulation_Heat>40</Insulation_Heat>
+			<EquipDelay>6</EquipDelay>
+		</statBases>
+		<equippedStatOffsets>
+			<MoveSpeed>-0.6</MoveSpeed>
+		</equippedStatOffsets>
+		<costList>
+			<ComponentSpacer>10</ComponentSpacer>
+			<Plasteel>600</Plasteel>
+			<Steel>750</Steel>
+			<Uranium>100</Uranium>
+			<HP_Ceramite>100</HP_Ceramite>
+		</costList>
+		<apparel>
+			<drawData>
+				<dataWest>
+					<layer>70</layer>
+				</dataWest>
+				<dataEast>
+					<layer>70</layer>
+				</dataEast>
+			</drawData>
+			<wornGraphicPath>Things/Apparel/Armor_Gravis/Gravis_torso</wornGraphicPath>
+			<tags>
+				<li>PrestigeCombatGear</li>
+				<li>GW_Gravis</li>
+			</tags>
+		</apparel>
+	</ThingDef>
+
+	<ThingDef ParentName="GW_SM_GravisArmorBase">
+		<defName>GW_SM_GravisArmorNeckPlate</defName>
+		<label>gravis power armor (b)</label>
+		<graphicData>
+			<texPath>Things/Apparel/Armor_Gravis/Gravis_necktorso_south</texPath>
+		</graphicData>
+		<apparel>
+			<wornGraphicPath>Things/Apparel/Armor_Gravis/Gravis_necktorso</wornGraphicPath>
+		</apparel>
+	</ThingDef>
+
+	<!--Terminator-->
+	<ThingDef ParentName="GW_SM_ArmorBase">
+		<defName>GW_SM_IndomitusTerminatorArmor</defName>
+		<label>terminator power armor</label>
+		<description>The Indomitus Terminator armor, reserved for the 1st company of each Adeptus Astartes chapter, symbolizes unparalleled power and invincibility. Crafted with ancient technology and empowered by the Emperor, this armor offers unmatched protection and resilience. Its adamantium plating and energy shielding make its wearer virtually impervious to all but the most devastating attacks. Enhanced with built-in weapons and teleportation, it ensures its bearers lead the Imperium's most critical battles, embodying the indomitable spirit of the Space Marines.</description>
+		<graphicData>
+			<texPath>Things/Apparel/Armor_IndomitusTerminator/Indomitus_torso_south</texPath>
+		</graphicData>
+		<recipeMaker>
+			<researchPrerequisite>GW_SM_AstartesHeavy</researchPrerequisite>
+		</recipeMaker>
+		<statBases>
+			<WorkToMake>110000</WorkToMake>
+			<MaxHitPoints>1500</MaxHitPoints>
+			<Mass>15</Mass>
+			<Flammability>0.1</Flammability>
+			<ArmorRating_Sharp>2.00</ArmorRating_Sharp>
+			<ArmorRating_Blunt>1.7</ArmorRating_Blunt>
+			<ArmorRating_Heat>1.5</ArmorRating_Heat>
+			<Insulation_Cold>50</Insulation_Cold>
+			<Insulation_Heat>50</Insulation_Heat>
+			<EquipDelay>7</EquipDelay>
+		</statBases>
+		<equippedStatOffsets>
+			<VEF_MassCarryCapacity>50</VEF_MassCarryCapacity>
+			<MoveSpeed>-0.5</MoveSpeed>
+		</equippedStatOffsets>
+		<costList>
+			<ComponentSpacer>13</ComponentSpacer>
+			<Plasteel>800</Plasteel>
+			<Steel>500</Steel>
+			<Uranium>150</Uranium>
+			<HP_Ceramite>150</HP_Ceramite>
+		</costList>
+		<apparel>
+			<drawData>
+				<dataWest>
+					<layer>70</layer>
+				</dataWest>
+				<dataEast>
+					<layer>70</layer>
+				</dataEast>
+				<!--<scale>1.5</scale> Uncomment these to increase size while equipped
+                <childScale>1.5</childScale>-->
+			</drawData>
+			<wornGraphicPath>Things/Apparel/Armor_IndomitusTerminator/Indomitus_torso</wornGraphicPath>
+			<layers>
+				<li>Backpack</li>
+			</layers>
+			<tags>
+				<li>PrestigeCombatGear</li>
+				<li>GW_Terminator</li>
+			</tags>
+		</apparel>
+		<modExtensions Inherit="False">
+			<li Class="VFECore.ApparelDrawPosExtension">
+				<isUnifiedApparel>true</isUnifiedApparel>
+				<hideHead>false</hideHead>
+			</li>
+			<li Class="CombatExtended.PartialArmorExt" MayRequire="ceteam.combatextended">
+				<stats>
+					<li>
+						<ArmorRating_Sharp>0.8</ArmorRating_Sharp>
+						<parts>
+							<li>Hand</li>
+						</parts>
+					</li>
+					<li>
+						<ArmorRating_Blunt>0.8</ArmorRating_Blunt>
+						<parts>
+							<li>Hand</li>
+						</parts>
+					</li>
+				</stats>
+			</li>
+		</modExtensions>
+	</ThingDef>
+</Defs>

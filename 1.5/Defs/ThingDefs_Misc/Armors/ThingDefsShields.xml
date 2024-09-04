@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef ParentName="GWShieldBase" Name="GWCombatShieldBase">
+		<defName>GW_SM_CombatShieldA</defName>
+		<label>combat shield</label>
+		<description>A lighter version of the storm shield, using similar principles. While it is not as protective as a full-sized storm shield, it remains a strong defensive bulwark against enemy attacks, especially due to the power field coating the shield.</description>
+		<graphicData>
+			<texPath>Things/Apparel/ArmorUpgrade_Shields/Combat shields/Preview/CombatShield1_preview</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+		</graphicData>
+		<comps>
+			<li Class="GWParryShield.CompProperties_GW_Parryable">
+				<parryHediff>GW_CombatShieldParry</parryHediff>
+				<parryChance>0.20</parryChance> <!-- 0.20 = 20% -->
+				<parryWindow>30</parryWindow>
+				<parryCooldown>90</parryCooldown>
+			</li>
+		</comps>
+		<thingCategories Inherit="False">
+			<li>GW_CombatShield</li>
+		</thingCategories>
+		<costStuffCount>60</costStuffCount>
+		<statBases>
+			<StuffEffectMultiplierArmor>1</StuffEffectMultiplierArmor>
+			<Mass>7</Mass>
+			<Bulk MayRequire="CETeam.CombatExtended">8</Bulk>
+			<WornBulk MayRequire="CETeam.CombatExtended">5</WornBulk>
+		</statBases>
+		<equippedStatOffsets>
+			<ReloadSpeed MayRequire="CETeam.CombatExtended">-0.2</ReloadSpeed>
+			<MeleeHitChance>-1</MeleeHitChance>
+			<ShootingAccuracyPawn>-0.15</ShootingAccuracyPawn>
+			<AimingAccuracy MayRequire="CETeam.CombatExtended">-0.08</AimingAccuracy>
+			<Suppressability MayRequire="CETeam.CombatExtended">-0.25</Suppressability>
+			<MeleeCritChance MayRequire="CETeam.CombatExtended">-0.05</MeleeCritChance>
+			<MeleeParryChance MayRequire="CETeam.CombatExtended">1.0</MeleeParryChance>
+		</equippedStatOffsets>
+		<apparel>
+			<drawData>
+				<defaultData>
+					<layer>76</layer> <!--70-77 is over helmet and under gun-->
+				</defaultData>
+				<dataNorth>
+					<offset>(0.0, -0.4, 0.1)</offset>
+				</dataNorth>
+				<!-- <dataSouth> -->
+				<!-- <offset>(0.0, 0.1, 0.0)</offset> -->
+				<!-- </dataSouth> -->
+				<!-- <dataWest> -->
+				<!-- <offset>(0.0, 0.4, 0.0)</offset> -->
+				<!-- </dataWest> -->
+				<dataEast>
+					<offset>(0.25, 0.0, 0.0)</offset>
+				</dataEast>
+				<scale>1.0</scale>
+				<childScale>1.0</childScale>
+			</drawData>
+			<wornGraphicPath>Things/Apparel/ArmorUpgrade_Shields/Combat shields/CombatShield1</wornGraphicPath>
+			<developmentalStageFilter>Child, Adult</developmentalStageFilter>
+			<tags>
+				<li>GW_SM_CombatShield</li>
+			</tags>
+		</apparel>
+		<recipeMaker>
+			<researchPrerequisite>GW_SM_AstartesBasicShields</researchPrerequisite>
+			<recipeUsers>
+				<li>GW_SM_ArmorBench</li>
+			</recipeUsers>
+		</recipeMaker>
+		<modExtensions>
+			<li Class="CombatExtended.ShieldDefExtension" MayRequire="CETeam.CombatExtended">
+				<shieldCoverage>
+					<li>Hands</li>
+					<li>Arms</li>
+					<li>Shoulders</li>
+					<li>Torso</li>
+					<li>Neck</li>
+				</shieldCoverage>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<ThingDef ParentName="GWCombatShieldBase">
+		<defName>GW_SM_CombatShieldB</defName>
+		<graphicData>
+			<texPath>Things/Apparel/ArmorUpgrade_Shields/Combat shields/Preview/CombatShield2_preview</texPath>
+		</graphicData>
+		<apparel>
+			<wornGraphicPath>Things/Apparel/ArmorUpgrade_Shields/Combat shields/CombatShield2</wornGraphicPath>
+		</apparel>
+	</ThingDef>
+
+	<ThingDef ParentName="GWCombatShieldBase">
+		<defName>GW_SM_CombatShieldC</defName>
+		<graphicData>
+			<texPath>Things/Apparel/ArmorUpgrade_Shields/Combat shields/Preview/CombatShield3_preview</texPath>
+		</graphicData>
+		<apparel>
+			<wornGraphicPath>Things/Apparel/ArmorUpgrade_Shields/Combat shields/CombatShield3</wornGraphicPath>
+		</apparel>
+	</ThingDef>
+
+	<ThingDef ParentName="GWCombatShieldBase">
+		<defName>GW_SM_CombatShieldD</defName>
+		<graphicData>
+			<texPath>Things/Apparel/ArmorUpgrade_Shields/Combat shields/Preview/CombatShield4_preview</texPath>
+		</graphicData>
+		<apparel>
+			<wornGraphicPath>Things/Apparel/ArmorUpgrade_Shields/Combat shields/CombatShield4</wornGraphicPath>
+		</apparel>
+	</ThingDef>
+
+	<ThingDef ParentName="GWShieldBase" Name="GWStormShieldBase">
+		<defName>GW_SM_StormShieldA</defName>
+		<label>storm shield</label>
+		<description>A heavy ballistic shield used by some Space Marine Terminators. As well as being a durable shield in its own right, it has an integrated energy field generator (similar to a power weapon), using gravitational forces to defeat incoming threats.\n\nThe Adeptus Custodes - the personal guard of the God-Emperor of Mankind - have also been known to use storm shields, and smaller versions are used by Daemonhunters of the Inquisition.</description>
+		<graphicData>
+			<texPath>Things/Apparel/ArmorUpgrade_Shields/Storm shields/Preview/StormShield1_preview</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+		</graphicData>
+		<comps>
+			<li Class="GWParryShield.CompProperties_GW_Parryable">
+				<parryHediff>GW_StormShieldParry</parryHediff><!-- the parry hediff-->
+				<parryChance>0.25</parryChance> <!-- 0.20 = 20% -->
+				<parryWindow>30</parryWindow><!-- duration of parry hediff-->
+				<parryCooldown>120</parryCooldown>
+			</li>
+		</comps>
+		<thingCategories Inherit="False">
+			<li>GW_StormShield</li>
+		</thingCategories>
+		<costStuffCount>90</costStuffCount>
+		<statBases>
+			<StuffEffectMultiplierArmor>1</StuffEffectMultiplierArmor>
+			<Mass>12</Mass>
+			<Bulk MayRequire="CETeam.CombatExtended">8</Bulk>
+			<WornBulk MayRequire="CETeam.CombatExtended">5</WornBulk>
+		</statBases>
+		<equippedStatOffsets>
+			<ReloadSpeed MayRequire="CETeam.CombatExtended">-0.3</ReloadSpeed>
+			<MeleeHitChance>-4</MeleeHitChance>
+			<ShootingAccuracyPawn>-0.4</ShootingAccuracyPawn>
+			<AimingAccuracy MayRequire="CETeam.CombatExtended">-0.2</AimingAccuracy>
+			<Suppressability MayRequire="CETeam.CombatExtended">-0.5</Suppressability>
+			<MeleeCritChance MayRequire="CETeam.CombatExtended">-0.2</MeleeCritChance>
+			<MeleeParryChance MayRequire="CETeam.CombatExtended">1.0</MeleeParryChance>
+		</equippedStatOffsets>
+		<apparel>
+			<drawData>
+				<defaultData>
+					<layer>76</layer> <!--70-77 is over helmet and under gun-->
+				</defaultData>
+				<dataNorth>
+					<offset>(0.0, -0.4, 0.1)</offset>
+				</dataNorth>
+				<!-- <dataSouth> -->
+				<!-- <offset>(0.0, 0.1, 0.0)</offset> -->
+				<!-- </dataSouth> -->
+				<!-- <dataWest> -->
+				<!-- <offset>(0.0, 0.4, 0.0)</offset> -->
+				<!-- </dataWest> -->
+				<dataEast>
+					<offset>(0.25, 0.0, 0.0)</offset>
+				</dataEast>
+				<scale>1.0</scale>
+				<childScale>1.0</childScale>
+			</drawData>
+			<wornGraphicPath>Things/Apparel/ArmorUpgrade_Shields/Storm shields/StormShield1</wornGraphicPath>
+			<developmentalStageFilter>Child, Adult</developmentalStageFilter>
+			<tags>
+				<li>GW_SM_StormShield</li>
+			</tags>
+		</apparel>
+		<recipeMaker>
+			<researchPrerequisite>GW_SM_AstartesBasicShields</researchPrerequisite>
+		</recipeMaker>
+		<modExtensions>
+			<li Class="CombatExtended.ShieldDefExtension" MayRequire="CETeam.CombatExtended">
+				<shieldCoverage>
+					<li>Hands</li>
+					<li>Arms</li>
+					<li>Shoulders</li>
+					<li>Torso</li>
+					<li>Neck</li>
+				</shieldCoverage>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<ThingDef ParentName="GWStormShieldBase">
+		<defName>GW_SM_StormShieldB</defName>
+		<graphicData>
+			<texPath>Things/Apparel/ArmorUpgrade_Shields/Storm shields/Preview/StormShield2_preview</texPath>
+		</graphicData>
+		<apparel>
+			<wornGraphicPath>Things/Apparel/ArmorUpgrade_Shields/Storm shields/StormShield2</wornGraphicPath>
+		</apparel>
+	</ThingDef>
+
+	<ThingDef ParentName="GWStormShieldBase">
+		<defName>GW_SM_StormShieldC</defName>
+		<graphicData>
+			<texPath>Things/Apparel/ArmorUpgrade_Shields/Storm shields/Preview/StormShield3_preview</texPath>
+		</graphicData>
+		<apparel>
+			<wornGraphicPath>Things/Apparel/ArmorUpgrade_Shields/Storm shields/StormShield3</wornGraphicPath>
+		</apparel>
+	</ThingDef>
+
+	<ThingDef ParentName="GWStormShieldBase">
+		<defName>GW_SM_StormShieldD</defName>
+		<graphicData>
+			<texPath>Things/Apparel/ArmorUpgrade_Shields/Storm shields/Preview/StormShield4_preview</texPath>
+		</graphicData>
+		<apparel>
+			<wornGraphicPath>Things/Apparel/ArmorUpgrade_Shields/Storm shields/StormShield4</wornGraphicPath>
+		</apparel>
+	</ThingDef>
+
+	<ThingDef ParentName="GWShieldBase">
+		<defName>GW_SM_PrimarisShield</defName>
+		<label>primaris shield</label>
+		<description>Primaris shields, wielded by Bladeguard Veterans and other Primaris officers, epitomize top-tier defense among Adeptus Astartes. Crafted with advanced materials and tech, they offer unparalleled protection. Enhanced with energy fields and reinforced plating, they provide reliable defense and formidable offense in close-quarters combat. Trusted by elite warriors, Primaris shields symbolize the unwavering dedication of the Imperium's finest champions.</description>
+		<graphicData>
+			<texPath>Things/Apparel/ArmorUpgrade_Shields/Primaris shields/Previews/PrimarisShield1_preview</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+		</graphicData>
+		<comps>
+			<li Class="GWParryShield.CompProperties_GW_Parryable">
+				<parryHediff>GW_PrimarisShieldParry</parryHediff>
+				<parryChance>0.20</parryChance> <!-- 0.50 = 50% -->
+				<parryWindow>30</parryWindow>
+				<parryCooldown>90</parryCooldown>
+			</li>
+		</comps>
+		<apparel>
+			<drawData>
+				<defaultData>
+					<layer>76</layer> <!--70-77 is over helmet and under gun-->
+				</defaultData>
+				<dataNorth>
+					<offset>(0.0, -0.4, 0.1)</offset>
+				</dataNorth>
+				<!-- <dataSouth> -->
+				<!-- <offset>(0.0, 0.1, 0.0)</offset> -->
+				<!-- </dataSouth> -->
+				<!-- <dataWest> -->
+				<!-- <offset>(0.0, 0.4, 0.0)</offset> -->
+				<!-- </dataWest> -->
+				<dataEast>
+					<offset>(0.25, 0.0, 0.0)</offset>
+				</dataEast>
+				<scale>1.0</scale>
+				<childScale>1.0</childScale>
+			</drawData>
+			<wornGraphicPath>Things/Apparel/ArmorUpgrade_Shields/Primaris shields/PrimarisShield1</wornGraphicPath>
+			<developmentalStageFilter>Child, Adult</developmentalStageFilter>
+			<tags>
+				<li>40kPrimaris_Shield</li>
+			</tags>
+		</apparel>
+		<costStuffCount>90</costStuffCount>
+		<statBases>
+			<StuffEffectMultiplierArmor>1</StuffEffectMultiplierArmor>
+			<Mass>12</Mass>
+			<Bulk MayRequire="CETeam.CombatExtended">8</Bulk>
+			<WornBulk MayRequire="CETeam.CombatExtended">5</WornBulk>
+		</statBases>
+		<equippedStatOffsets>
+			<ReloadSpeed MayRequire="CETeam.CombatExtended">-0.3</ReloadSpeed>
+			<MeleeHitChance>-4</MeleeHitChance>
+			<ShootingAccuracyPawn>-0.4</ShootingAccuracyPawn>
+			<AimingAccuracy MayRequire="CETeam.CombatExtended">-0.2</AimingAccuracy>
+			<Suppressability MayRequire="CETeam.CombatExtended">-0.5</Suppressability>
+			<MeleeCritChance MayRequire="CETeam.CombatExtended">-0.2</MeleeCritChance>
+			<MeleeParryChance MayRequire="CETeam.CombatExtended">1.0</MeleeParryChance>
+		</equippedStatOffsets>
+		<recipeMaker>
+			<researchPrerequisite>GW_SM_AstartesBasicShields</researchPrerequisite>
+			<recipeUsers>
+				<li>GW_SM_ArmorBench</li>
+			</recipeUsers>
+		</recipeMaker>
+		<modExtensions>
+			<li Class="CombatExtended.ShieldDefExtension" MayRequire="CETeam.CombatExtended">
+				<shieldCoverage>
+					<li>Hands</li>
+					<li>Arms</li>
+					<li>Shoulders</li>
+					<li>Torso</li>
+					<li>Neck</li>
+				</shieldCoverage>
+			</li>
+		</modExtensions>
+	</ThingDef>
+</Defs>
