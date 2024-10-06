@@ -449,7 +449,7 @@
 	<ThingDef ParentName="BaseHumanMakeableGun">
 		<defName>GW_SM_SniperRifle</defName>
 		<label>ultra pattern sniper rifle</label>
-		<description>A heavy, integrally-suppressed sniper rifle, used by Space Marines of the Deathwatch for long-range combat. Properly designated as the Mark IX sniper rifle, this weapon fires needles at the enemy, propelled by an invisible laser. The same laser also punches a tiny hole in the target’s armor, allowing the needle through.\n\nFlashless and almost completely silent, needle weapons are a favorite of assassins, snipers, and other distinguishing shooters. In the Age of the Imperium, the needles used to be made of crystallized chemicals, allowing for non-lethal capture and near-traceless assassination, but in modern times the needles are typically solid materials.</description>
+		<description>A heavy, integrally-suppressed sniper rifle, used by Space Marines of the Deathwatch for long-range combat. Properly designated as the Mark IX sniper rifle, this weapon fires needles at the enemy, propelled by an invisible laser. The same laser also punches a tiny hole in the target’s armor, allowing the needle through.\n\nFlashless and almost completely silent, needle weapons are a favorite of assassins, snipers, and other distinguishing shooters. The needles are normally made of crystallized chemicals, allowing for non-lethal capture and near-traceless assassination, but due to necessity, the needles used here are solid materials.</description>
 		<graphicData>
 			<texPath>Things/Weapons/Ranged/SniperRifle</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
