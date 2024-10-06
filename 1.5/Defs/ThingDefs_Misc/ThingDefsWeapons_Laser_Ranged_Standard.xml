@@ -568,7 +568,7 @@
 	<ThingDef ParentName="BaseHumanMakeableGun">
 		<defName>GW_SM_InfernoPistol</defName>
 		<label>inferno gun</label>
-		<description>The Inferno Pistol, favored by elite Imperial operatives and Astartes alike, delivers devastating close-range firepower. Its reinforced ceramite casing withstands intense heat, while focused streams of searing energy incinerate armored targets efficiently. Compact and maneuverable, it excels in close-quarters combat, making it a coveted weapon among veteran warriors.</description>
+		<description>A pistol-sized, Astartes-scale melta weapon. Its short range and slightly lower power is little issue for a fierce Assault Marine in close-quarters. \n\nThe chapter master of the Blood Angels, Dante, wields a unique Inferno gun known as the “Perdition Pistol”, along with a master-crafted power axe known as the “Axe Mortalis”.</description>
 		<techLevel>Spacer</techLevel>
 		<graphicData>
 			<drawSize>1.2</drawSize>
