@@ -1,14 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-	<ResearchProjectDef Abstract="True" Name="GW_SM_AoDTechBase" ParentName="GW_ImperiumTechBase">
+    <ResearchProjectDef Abstract="True" Name="GW_SM_AoDTechBase" ParentName="GW_ImperiumTechBase">
 		<techLevel>Ultra</techLevel>
-	</ResearchProjectDef>
+    </ResearchProjectDef>
 
 	<ResearchProjectDef ParentName="GW_SM_AoDTechBase">
 		<defName>GW_SM_CodexAstartes</defName>
 		<label>codex astartes</label>
 		<description>Study the Codex Astartes, the doctrine of the Adeptus Astartes written by the Primarch Roboute Guilliman. While most Space Marine chapters are Codex-compliant, following the Codex’s organization and tactics, other chapters use their own methods.</description>
-		<baseCost>2000</baseCost>
+        <baseCost>2000</baseCost>
 		<prerequisites>
 			<li>AdvancedFabrication</li>
 		</prerequisites>
@@ -20,7 +20,7 @@
 		<defName>GW_SM_AstartesFabrication</defName>
 		<label>astartes fabrication</label>
 		<description>Learn the basics of manufacturing Space Marine equipment, and produce armor suitable for Scout Marines.</description>
-		<baseCost>2000</baseCost>
+        <baseCost>2000</baseCost>
 		<prerequisites>
 			<li>GW_SM_CodexAstartes</li>
 		</prerequisites>
@@ -32,139 +32,142 @@
 		<defName>GW_SM_AstartesBasicShields</defName>
 		<label>astartes shields</label>
 		<description>Produce protective, handheld shields suitable for use by Space Marines.</description>
-		<baseCost>3500</baseCost>
+        <baseCost>3500</baseCost>
 		<prerequisites>
 			<li>GW_SM_AstartesFabrication</li>
 		</prerequisites>
 		<researchViewX>8.00</researchViewX>
 		<researchViewY>0.00</researchViewY>
-		<modExtensions>
-			<li Class="GW_Frame.DefModExtension_ExtraPrerequisiteActions">
-				<StudyLocation>GW_Cogitator</StudyLocation>
-				<ItemStudyRequirements>
-					<li Class="GW_Frame.StudyRequirement">
-						<StudyObject>GW_STC_Fragment</StudyObject>
-						<NumberRequired>2</NumberRequired>
-					</li>
-				</ItemStudyRequirements>
-			</li>
-		</modExtensions>
+        <modExtensions>
+            <li Class="GW_Frame.DefModExtension_ExtraPrerequisiteActions">
+                <StudyLocation>GW_Cogitator</StudyLocation>
+                <ItemStudyRequirements>
+                    <li Class="GW_Frame.StudyRequirement">
+                        <StudyObject>GW_STC_Fragment</StudyObject>
+                        <NumberRequired>2</NumberRequired>
+                    </li>    
+                </ItemStudyRequirements>
+            </li>
+        </modExtensions>
 	</ResearchProjectDef>
-
+	
 	<ResearchProjectDef ParentName="GW_SM_AoDTechBase">
 		<defName>GW_SM_Jump_Packs</defName>
 		<label>Jump packs</label>
 		<description>Manufacture Jump Packs - back-mounted thrusters used by Space Marines for airborne assault.</description>
-		<baseCost>4000</baseCost>
+        <baseCost>4000</baseCost>
 		<prerequisites>
 			<li>GW_SM_AstartesFabrication</li>
 		</prerequisites>
 		<researchViewX>9.00</researchViewX>
 		<researchViewY>0.00</researchViewY>
 		<modExtensions>
-			<li Class="GW_Frame.DefModExtension_ExtraPrerequisiteActions">
-				<StudyLocation>GW_Cogitator</StudyLocation>
-				<ItemStudyRequirements>
-					<li Class="GW_Frame.StudyRequirement">
-						<StudyObject>GW_STC_Fragment</StudyObject>
-						<NumberRequired>2</NumberRequired>
-					</li>
-				</ItemStudyRequirements>
-			</li>
-		</modExtensions>
+            <li Class="GW_Frame.DefModExtension_ExtraPrerequisiteActions">
+                <StudyLocation>GW_Cogitator</StudyLocation>
+                <ItemStudyRequirements>
+                    <li Class="GW_Frame.StudyRequirement">
+                        <StudyObject>GW_STC_Fragment</StudyObject>
+                        <NumberRequired>2</NumberRequired>
+                    </li>    
+                </ItemStudyRequirements>
+            </li>
+        </modExtensions>
 	</ResearchProjectDef>
 
 	<ResearchProjectDef ParentName="GW_SM_AoDTechBase">
 		<defName>GW_SM_AstartesLight</defName>
 		<label>astartes light power armors</label>
 		<description>Create lightweight Space Marine power armor of the Mk X Phobos pattern, as well as the modified armor of Space Marine Reivers.</description>
-		<baseCost>5000</baseCost>
+        <baseCost>5000</baseCost>
 		<prerequisites>
 			<li>GW_SM_AstartesFabrication</li>
 		</prerequisites>
 		<researchViewX>8.00</researchViewX>
 		<researchViewY>0.70</researchViewY>
-		<modExtensions>
-			<li Class="GW_Frame.DefModExtension_ExtraPrerequisiteActions">
-				<StudyLocation>GW_Cogitator</StudyLocation>
-				<ItemStudyRequirements>
-					<li Class="GW_Frame.StudyRequirement">
-						<StudyObject>GW_STC_Fragment</StudyObject>
-						<NumberRequired>2</NumberRequired>
-					</li>
-				</ItemStudyRequirements>
-			</li>
-		</modExtensions>
+        <modExtensions>
+            <li Class="GW_Frame.DefModExtension_ExtraPrerequisiteActions">
+                <StudyLocation>GW_Cogitator</StudyLocation>
+                <ItemStudyRequirements>
+                    <li Class="GW_Frame.StudyRequirement">
+                        <StudyObject>GW_STC_Fragment</StudyObject>
+                        <NumberRequired>2</NumberRequired>
+                    </li>
+                </ItemStudyRequirements>
+            </li>
+        </modExtensions>
 	</ResearchProjectDef>
 
 	<ResearchProjectDef ParentName="GW_SM_AoDTechBase">
 		<defName>GW_SM_AstartesMedium</defName>
 		<label>astartes medium power armors</label>
 		<description>Produce mainline suits of Space Marine power armor - the Mark IV Maximus, the Mark VI Corvus, the Mark VII Aquila, and the Mark X Tacticus patterns.</description>
-		<baseCost>6500</baseCost>
+        <baseCost>6500</baseCost>
 		<prerequisites>
 			<li>GW_SM_AstartesLight</li>
 		</prerequisites>
 		<researchViewX>9.00</researchViewX>
 		<researchViewY>0.70</researchViewY>
-		<modExtensions>
-			<li Class="GW_Frame.DefModExtension_ExtraPrerequisiteActions">
-				<StudyLocation>GW_Cogitator</StudyLocation>
-				<ItemStudyRequirements>
-					<li Class="GW_Frame.StudyRequirement">
-						<StudyObject>GW_STC_Fragment</StudyObject>
-						<NumberRequired>3</NumberRequired>
-					</li>
-				</ItemStudyRequirements>
-			</li>
-		</modExtensions>
+        <modExtensions>
+            <li Class="GW_Frame.DefModExtension_ExtraPrerequisiteActions">
+                <StudyLocation>GW_Cogitator</StudyLocation>
+                <ItemStudyRequirements>
+                    <li Class="GW_Frame.StudyRequirement">
+                        <StudyObject>GW_STC_Fragment</StudyObject>
+                        <NumberRequired>3</NumberRequired>
+                    </li>    
+                </ItemStudyRequirements>
+            </li>
+        </modExtensions>
 	</ResearchProjectDef>
 
 	<ResearchProjectDef ParentName="GW_SM_AoDTechBase">
 		<defName>GW_SM_AstartesHeavy</defName>
 		<label>astartes heavy power armors</label>
 		<description>Craft the heaviest suits of Space Marine power armor available - the Mark X Gravis pattern and the rare Terminator Armor.</description>
-		<baseCost>7800</baseCost>
+        <baseCost>7800</baseCost>
 		<prerequisites>
 			<li>GW_SM_AstartesMedium</li>
 		</prerequisites>
 		<researchViewX>10.00</researchViewX>
 		<researchViewY>0.70</researchViewY>
-		<modExtensions>
-			<li Class="GW_Frame.DefModExtension_ExtraPrerequisiteActions">
-				<StudyLocation>GW_Cogitator</StudyLocation>
-				<ItemStudyRequirements>
-					<li Class="GW_Frame.StudyRequirement">
-						<StudyObject>GW_STC_Fragment</StudyObject>
-						<NumberRequired>5</NumberRequired>
-					</li>
-				</ItemStudyRequirements>
-			</li>
-		</modExtensions>
+        <modExtensions>
+            <li Class="GW_Frame.DefModExtension_ExtraPrerequisiteActions">
+                <StudyLocation>GW_Cogitator</StudyLocation>
+                <ItemStudyRequirements>
+                    <li Class="GW_Frame.StudyRequirement">
+                        <StudyObject>GW_STC_Fragment</StudyObject>
+                        <NumberRequired>5</NumberRequired>
+                    </li>    
+                </ItemStudyRequirements>
+            </li>
+        </modExtensions>
 	</ResearchProjectDef>
 
 	<ResearchProjectDef ParentName="GW_SM_AoDTechBase">
 		<defName>GW_SM_GravWeapons</defName>
 		<label>grav weapons</label>
 		<description>Manufacture grav weapons - graviton-based weaponry that crushes a target with its own mass.</description>
-		<baseCost>6000</baseCost>
+        <baseCost>6000</baseCost>
+		<prerequisites>
+			<li>AdvancedFabrication</li>
+		</prerequisites>
 		<researchViewX>2.00</researchViewX>
 		<researchViewY>4.10</researchViewY>
-		<modExtensions>
-			<li Class="GW_Frame.DefModExtension_ExtraPrerequisiteActions">
-				<StudyLocation>GW_Cogitator</StudyLocation>
-				<ItemStudyRequirements>
-					<li Class="GW_Frame.StudyRequirement">
-						<StudyObject>GW_STC_Fragment</StudyObject>
-						<NumberRequired>2</NumberRequired>
-					</li>
-				</ItemStudyRequirements>
-			</li>
-		</modExtensions>
+        <modExtensions>
+            <li Class="GW_Frame.DefModExtension_ExtraPrerequisiteActions">
+                <StudyLocation>GW_Cogitator</StudyLocation>
+                <ItemStudyRequirements>
+                    <li Class="GW_Frame.StudyRequirement">
+                        <StudyObject>GW_STC_Fragment</StudyObject>
+                        <NumberRequired>2</NumberRequired>
+                    </li>    
+                </ItemStudyRequirements>
+            </li>
+        </modExtensions>
 	</ResearchProjectDef>
 
-	<!--Roles-->
-	<!--
+        <!--Roles-->
+		<!--
 	<ResearchProjectDef ParentName="GW_SM_AoDTechBase">
 		<defName>GW_SM_AstartesRoles</defName>
 		<label>astartes roles</label>
