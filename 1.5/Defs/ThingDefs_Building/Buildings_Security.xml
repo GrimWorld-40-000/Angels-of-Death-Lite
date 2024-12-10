@@ -99,7 +99,7 @@
 			<li>PlaceWorker_TurretTop</li>
 		</placeWorkers>
 		<researchPrerequisites>
-			<li>GW_BolterTurrets</li>
+			<li>GW_Bolters</li>
 			<li>GW_SM_CodexAstartes</li>
 		</researchPrerequisites>
 	</ThingDef>
@@ -229,7 +229,7 @@
 			<li>PlaceWorker_TurretTop</li>
 		</placeWorkers>
 		<researchPrerequisites>
-			<li>GW_LasCannonTurret</li>
+			<li>GW_Lasguns</li>
 			<li>GW_SM_CodexAstartes</li>
 		</researchPrerequisites>
 	</ThingDef>
