@@ -602,7 +602,7 @@
 		</apparel>
 		<comps />
 		<researchPrerequisites>
-			<li>GW_SM_AstartesMedium</li>
+			<li>GW_SM_NightLordMedium</li>
 		</researchPrerequisites>
 	</ThingDef>
 
@@ -713,7 +713,7 @@
 		</apparel>
 		<comps />
 		<researchPrerequisites>
-			<li>GW_SM_AstartesHeavy</li>
+			<li>GW_SM_NightLordHeavy</li>
 		</researchPrerequisites>
 	</ThingDef>
 
